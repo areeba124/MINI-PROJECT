@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #800080;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #800080;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="label-heading label-heading-success">SELECT MEMBERS:</h1>
+  <form class="form-horizontal" action="/success" method="post" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">student_name:</label>
+      <div class="col-sm-10">
+        <select multiple class="form-control" id="program" name="program" >
+          {%for s in student_name%}
+          <option> {{s}} </option>
+          {%endfor%}
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <form method="POST" action="/success.html">
+        <button type="submit" class="btn btn-default">Next</button>
+           </form>
+      </div>
+    </div>
+
+  </form>
+
+<script>
+ // Get the modal
+var modal = document.getElementbyId('id01');
+
+// when the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+     if (event.target == modal) {
+        modal.style.display = "none";
+}
+}
+</script>
+</form>
+</div>
+</body>
+</html>
+
+
+
